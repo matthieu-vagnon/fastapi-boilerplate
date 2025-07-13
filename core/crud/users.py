@@ -21,7 +21,7 @@ def get_user_by_id(user_id: UUID4, db: Session):
 
 
 def create_new_user(user_name: str, db: Session):
-    new_user = UserDB(name=user_name, created_on=date.today())
+    new_user = UserDB(name=user_name)
     name_exists = db.query(UserDB).filter(UserDB.name == user_name).first()
 
     if name_exists:
